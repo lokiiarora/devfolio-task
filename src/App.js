@@ -66,7 +66,9 @@ class App extends Component {
                       <Alert className="draggable-item" onDragStart={e => this.dragStartCapture(e)} onDragEnd={e => this.dragEnd()} onDragOver={e => this.dragOverCapture(e)} index={index} draggable={true} key={`holderone-${index}`}>
                         <div index={index} draggable={false} className="skill-holder">
                           <span index={index} draggable={false}>{index+1}{". "}{val.val}</span>
-                          <Button close onClick={e => this.cancelBtnClick(e, index)}></Button>
+                          <Button className="close-btn" onClick={e => this.cancelBtnClick(e, index)}>
+                              <svg color="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x-circle" style={{opacity:0.8}}><circle cx="12" cy="12" r="10"></circle><path d="M15 9l-6 6M9 9l6 6"></path></svg>
+                          </Button>
                         </div>
                       </Alert>
                     );
@@ -85,6 +87,7 @@ class App extends Component {
                       </Alert>
                     );
                 }
+                return null;
               })
             }
           </Col>
@@ -98,7 +101,9 @@ class App extends Component {
                       <Alert className="draggable-item" onDragStart={e => this.dragStartCapture(e)} index={5 + index} onDragOver={e => this.dragOverCapture(e)} onDragEnd={e => this.dragEnd()} draggable={true} key={`holdertwo-${index}`}>
                         <div index={index} className="skill-holder" draggable={false}>
                           <span index={index} draggable={false}>{index+6}{". "}{val.val}</span>
-                          <Button close onClick={e => this.cancelBtnClick(e, index+5)}></Button>
+                          <Button className="close-btn" onClick={e => this.cancelBtnClick(e, index+5)}>
+                            <svg color="black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x-circle" style={{opacity:0.8}}><circle cx="12" cy="12" r="10"></circle><path d="M15 9l-6 6M9 9l6 6"></path></svg>
+                          </Button>
                         </div>
                       </Alert>
                     );
@@ -115,6 +120,7 @@ class App extends Component {
                       </Alert>
                     );
                 }
+                return null
               })
             }
           </Col>
